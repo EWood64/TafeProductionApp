@@ -13,7 +13,8 @@ namespace ProductApps
         private decimal totalPayment;
         private decimal delivery;
         private decimal wrapping;
-        private decimal gst;
+        private double gst = 1.1;
+        public double TotalPaymentA;
 
         private decimal Price
         {
@@ -47,7 +48,7 @@ namespace ProductApps
             set { wrapping = value; }
         }
 
-        private decimal GST
+        public double GST
         {
             get { return gst; }
             set { gst = value; }
@@ -65,5 +66,13 @@ namespace ProductApps
         {
             TotalPayment = Price * Quantity;
         }
+
+        //Calculate gst
+        public void calGST()
+        {
+            TotalPaymentA = Convert.ToDouble(TotalPayment);
+            GST = (TotalPaymentA + 30) * 1.1;
+        }
+
     }
 }

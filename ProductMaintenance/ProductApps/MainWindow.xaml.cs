@@ -33,9 +33,11 @@ namespace ProductApps
             {
                 cProduct = new Product(Convert.ToDecimal(priceTextBox.Text), Convert.ToInt16(quantityTextBox.Text));
                 cProduct.calTotalPayment();
+                cProduct.calGST();
                 totalPaymentTextBlock.Text = Convert.ToString(cProduct.TotalPayment);
                 totalChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 25);
                 wrappingChargeTextBox.Text = Convert.ToString(cProduct.TotalPayment + 30);
+                gstChargeTextBox.Text = Convert.ToString(cProduct.GST);
             }
             catch (FormatException) 
             {
